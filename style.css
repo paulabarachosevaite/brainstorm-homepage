@@ -1,0 +1,615 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+/* VARIABLES */
+:root {
+  /* colors */
+  --primary-color: #f3c610;
+  --secondary-color: #f22626;
+  --light-color: #eee;
+  --dark-color: rgb(56, 54, 54);
+  --black-color: #000;
+
+  /* border radius */
+  --border-radius-md: 0.5rem;
+  --border-radius-top: 0.5rem 0.5rem 0 0;
+  --border-radius-bottom: 0 0 0.5rem 0.5rem;
+
+  /* hover effects */
+  --scale-sm: scale(1.02);
+  --scale-md: scale(1.08);
+}
+
+/* GENERAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* SHARED STYLES */
+
+/* font size */
+.font-xs {
+  font-size: 0.8rem;
+}
+.font-sm {
+  font-size: 1rem;
+}
+.font-md {
+  font-size: 1.4rem;
+}
+.font-lg {
+  font-size: 2rem;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.link {
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  transition: all 0.2s;
+}
+
+.button:hover {
+  transform: var(--scale-sm);
+  background-color: #f92b2b;
+}
+
+.link:hover {
+  transform: var(--scale-md);
+  color: var(--secondary-color);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-width {
+  width: 70vw;
+  margin: auto;
+}
+
+/* flex container */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* START OF NAVIGATION */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home {
+  margin: 0.5rem;
+}
+.logo {
+  width: 4rem;
+}
+.logo:hover {
+  transform: var(--scale-sm);
+}
+.navbar-links ul {
+  display: flex;
+  font-size: 1rem;
+}
+.navbar-links li a {
+  margin-right: 1rem;
+  display: block;
+  color: var(--light-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.contact {
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  transition: all 0.2s;
+}
+
+.contact:hover {
+  color: var(--secondary-color);
+  background-color: var(--light-color);
+}
+
+.toggle-button {
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button:hover {
+  transform: var(--scale-md);
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--black-color);
+  border-radius: 10px;
+}
+/* END OF NAVIGATION */
+
+/* START OF HEADER */
+.header {
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.hero-img {
+  width: 12rem;
+}
+
+.hero-title {
+  color: var(--light-color);
+  font-size: 5rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  color: var(--black-color);
+}
+.hero-button {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--light-color);
+  margin-top: 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.hero-button:hover {
+  transform: scale(1.2);
+  background-color: rgb(241, 63, 63);
+}
+
+/* END OF HEADER */
+
+/* START OF INTRO */
+.intro-title {
+  margin-top: 10rem;
+  text-align: center;
+  color: var(--dark-color);
+  font-weight: 300;
+}
+
+.intro-desc {
+  margin-top: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.intro-italic {
+  padding: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 4rem;
+  font-weight: 300;
+  color: var(--dark-color);
+  font-style: italic;
+}
+
+.icon {
+  width: 5rem;
+  margin: auto;
+}
+/* END OF INTRO */
+/* START OF SLIDESHOW */
+/* SLIDESHOW */
+
+.slideshow-container {
+  max-width: 100rem;
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.slide-content {
+  height: 25rem;
+  width: 100%;
+  color: var(--light-color);
+  row-gap: 2rem;
+}
+
+.content-1 {
+  background-color: rgb(241, 63, 63);
+}
+.content-2 {
+  background-color: var(--primary-color);
+}
+
+.content-3 {
+  background-color: #0ea293;
+}
+
+.slide-content img {
+  width: 4rem;
+}
+
+.text {
+  color: var(--black-color);
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* END OF SLIDESHOW */
+
+/* START OF COURSES */
+.courses-container {
+  gap: 2rem;
+}
+
+.courses-title {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  font-weight: 800;
+  color: var(--dark-color);
+  text-transform: uppercase;
+}
+
+.course-card {
+  margin: auto;
+  border-radius: var(--border-radius-md);
+  width: 20rem;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  -webkit-box-shadow: -3px -1px 16px -4px rgba(0, 0, 0, 0.61);
+  box-shadow: -3px -1px 16px -4px rgba(0, 0, 0, 0.61);
+  margin-bottom: 6rem;
+}
+
+.course-card:hover {
+  transform: var(--scale-sm);
+}
+
+.course-card-title {
+  position: relative;
+  text-align: center;
+  background: rgb(22, 5, 90);
+  border-radius: var(--border-radius-top);
+  font-weight: 700;
+  font-size: 2rem;
+  height: 10rem;
+  width: 100%;
+}
+
+.centered {
+  color: var(--light-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.course-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  border-radius: var(--border-radius-top);
+}
+
+.course-card-levels-list {
+  gap: 1rem;
+}
+
+.course-card-levels-list li {
+  list-style: none;
+  font-weight: 600;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.course-card-desc {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.course-card-info-list {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+.course-card-info-list-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.course-card-info-list-item img {
+  width: 1.6rem;
+}
+
+.course-card button {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1.4rem;
+  color: var(--dark-color);
+  border-radius: var(--border-radius-bottom);
+  transition: all 0.1s;
+}
+
+.course-card button:hover {
+  background-color: var(--secondary-color);
+}
+
+.courses-link {
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #262525;
+  text-align: center;
+  display: block;
+  margin-bottom: 5rem;
+}
+
+.courses-link:hover {
+  transform: scale(1.02);
+  color: rgb(242, 38, 38);
+}
+
+/* END OF COURSES */
+
+/* START OF CONTACT SECTION */
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem 0;
+  gap: 2rem;
+  background-color: var(--light-color);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+}
+
+.contact-section-title {
+  color: var(--dark-color);
+}
+.contact-section-subtitle {
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  border-radius: var(--border-radius-md);
+  border: var(--dark-color) solid 1px;
+}
+
+.input-group label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.form-textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: var(--border-radius-md);
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem;
+}
+
+.form-button {
+  border-radius: var(--border-radius-md);
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  transform: var(--scale-sm);
+}
+/* END OF CONTACT SECTION */
+
+/* START OF FOOTER */
+.footer {
+  height: fit-content;
+  background-color: var(--dark-color);
+  width: 100%;
+  gap: 2rem;
+  color: var(--light-color);
+}
+
+.footer img {
+  margin-top: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-nav a {
+  color: var(--light-color);
+  text-decoration: none;
+  background-color: #000;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.footer-nav a:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links i {
+  cursor: pointer;
+}
+.social-links i:hover {
+  color: var(--secondary-color);
+  transform: var(--scale-md);
+}
+
+.copy {
+  font-size: 0.8rem;
+  padding: 1rem;
+  background-color: var(--black-color);
+  width: 100%;
+  text-align: center;
+}
+/* END OF FOOTER */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-section-title {
+    text-align: center;
+  }
+  .contact-section-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .form {
+    width: 100%;
+  }
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section-width {
+    width: 90vw;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .contact {
+    background-color: transparent;
+    transition: none;
+  }
+  .contact:hover {
+    background-color: transparent;
+  }
+}
